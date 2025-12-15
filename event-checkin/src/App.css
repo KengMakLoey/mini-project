@@ -1,0 +1,391 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 0;
+}
+
+.container-split {
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  min-height: 100vh;
+}
+
+/* Left Panel - Registration Form */
+.left-panel {
+  background: white;
+  padding: 40px 30px;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.form-card h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+.form-section {
+  margin-bottom: 32px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* Stats Section in Left Panel */
+.stats-section {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 2px solid #e5e7eb;
+}
+
+.stats-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.stats-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #f9fafb;
+}
+
+.stat-item.blue {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #1e40af;
+}
+
+.stat-item.green {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #065f46;
+}
+
+.stat-item.orange {
+  background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+  color: #92400e;
+}
+
+.stat-item > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Right Panel - Attendee List */
+.right-panel {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.list-header {
+  margin-bottom: 32px;
+}
+
+.list-header h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.search-wrapper {
+  position: relative;
+  max-width: 500px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 16px 14px 48px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.2s;
+  background: white;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Attendee List */
+.attendee-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.attendee-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.attendee-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border-color: #667eea;
+  transform: translateY(-2px);
+}
+
+.attendee-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar span {
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.attendee-details {
+  flex: 1;
+}
+
+.attendee-details h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.attendee-details .code {
+  font-size: 13px;
+  color: #6b7280;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 6px;
+}
+
+.check-in-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #d1fae5;
+  color: #065f46;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.btn-delete {
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-delete:hover {
+  background: #fecaca;
+  transform: scale(1.1);
+}
+
+.btn-delete:active {
+  transform: scale(0.95);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: #6b7280;
+  font-size: 16px;
+  background: white;
+  border-radius: 12px;
+  border: 2px dashed #e5e7eb;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container-split {
+    grid-template-columns: 1fr;
+  }
+
+  .left-panel {
+    box-shadow: none;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .right-panel {
+    background: white;
+  }
+}
+
+@media (max-width: 768px) {
+  .left-panel {
+    padding: 24px 20px;
+  }
+
+  .right-panel {
+    padding: 24px 20px;
+  }
+
+  .form-card h1 {
+    font-size: 26px;
+  }
+
+  .list-header h2 {
+    font-size: 22px;
+  }
+
+  .attendee-card {
+    padding: 16px;
+  }
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .avatar span {
+    font-size: 16px;
+  }
+
+  .attendee-details h4 {
+    font-size: 16px;
+  }
+
+  .search-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .attendee-info {
+    gap: 12px;
+  }
+
+  .attendee-details h4 {
+    font-size: 15px;
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+}
